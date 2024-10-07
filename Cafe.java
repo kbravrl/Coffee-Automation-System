@@ -43,7 +43,7 @@ class Cafe {
         if (availableQuantity >= order.getQuantity()) {
             return true;
         }
-        System.out.println("Üzgünüz, bu boyutta yeterli " + order.getCoffee() + " stokta bulunmamaktadır.");
+        System.out.println("Sorry, there is not enough " + order.getCoffee() + " in stock for this size.");
         return false;
     }
 
@@ -51,7 +51,7 @@ class Cafe {
         if (customer.getWalletBalance() >= totalCoffeePrice) {
             return true;
         }
-        System.out.println("Yetersiz bakiye nedeniyle sipariş iptal edildi.");
+        System.out.println("Order canceled due to insufficient balance.");
         return false;
     }
 
@@ -74,16 +74,16 @@ class Cafe {
     }
 
     public void displayMenu() {
-        System.out.println("Menü:");
+        System.out.println("Menu:");
         inventory.displayCoffeeList();
     }
 
     public void printTotalSalesReport() {
-        System.out.println("\nToplam Satış: " + totalSales + " TL");
+        System.out.println("\nTotal Sales: " + totalSales + " TL");
     }
 
     public void printInventoryReport() {
-        System.out.println("\nEnvanter Durumu:");
+        System.out.println("\nInventory Status:");
         inventory.displayCoffeeQuantities();
     }
 }
